@@ -1,1 +1,1 @@
-Historian Dan Papsdorf's professional website.
+Historian Nancy MacLean's professional website.
