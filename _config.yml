@@ -3,13 +3,13 @@
 #
 
 # Name of your site (displayed in the header)
-name: Daniel Papsdorf
+name: Nancy MacLean
 
 # Short bio or description (displayed in the header)
 description: Historian
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: /images/pic.jpg
+avatar: /images/image_7228392.jpg
 
 # The Current CV you want to use in the documents/ folder
 current-cv: "Papsdorf CV Fall 2016.pdf"
@@ -20,7 +20,7 @@ teaching-philosophy: "Teaching Philosophy.pdf"
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: daniel.papsdorf@duke.edu
+  email: nancy.maclean@duke.edu
   facebook:
   flickr:
   github:
@@ -43,13 +43,13 @@ google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: http://www.danielpapsdorf.com/
+url: https://nancymaclean.github.io/
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: http://www.danielpapsdorf.com/
+baseurl: https://nancymaclean.github.io/
 
 # Custom collections for academics
 collections:
