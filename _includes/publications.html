@@ -1,11 +1,13 @@
+{% assign sorted = (site.publications | sort: 'year') | reverse %}
+
 <div class="publications">
-  {% for publication in site.publications %}
+  {% for publication in sorted %}
     <div class="publications__{{ publication.type }}">
       {% if publication.type == 'book-review' %}Review, {% endif %}
-      {% if publication.link %}<a href="{{ publications.link }}" class="publications__link">{% endif %}
+      {% if publication.link or publication.type == 'book' %}<a href="{% if publication.type == 'book' %}{{ publication.url }}{% else %}{{ publications.link }}{% endif %}" class="publications__link">{% endif %}
         <span class="publications__title">{% if publication.title %}{{ publication.title }}{% endif %}{% if publication.book-title %}{{ publication.book-title }}{% endif %}</span>
         {% if publication.type == 'book-review' and publication.book-year %}({{ publication.book-year }}){% endif %}
-      {% if publication.link %}</a>{% endif %}
+      {% if publication.link or publication.type == 'book' %}</a>{% endif %}
       <span class="publication__meta">
         {% if publication.type == 'article' or publication.type == 'book-review' %}
           <em class="publication__publication-title">{{ publication.publication }}</em>
@@ -19,6 +21,10 @@
         {% endif %}
         {% if publication.under-review and publication.under-review != 'no' %}
           (Under Review)
+        {% endif %}
+        {% if publication.type == 'book' %}
+          (<span class="publications__publisher">{{publication.publisher}}</span>,
+          <span class="publication__year">{{ publication.year }}</span>)
         {% endif %}
       </span>
     </div>

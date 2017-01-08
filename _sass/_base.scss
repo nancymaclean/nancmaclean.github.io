@@ -8,7 +8,7 @@ html {
 
 body {
   background: $color-background;
-  font: 18px/1.4 $fonts-general;
+  font: 16px/1.4 $fonts-general;
   color: $color-text;
 }
 
@@ -23,8 +23,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $fonts-headers;
   color: $color-header;
   font-weight: bold;
-
-  line-height: 1.7;
   padding: 0;
 
   a {
@@ -43,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: $font-size-huge;
+  font-size: $font-size-larger;
 }
 
 h2 {
@@ -60,6 +58,34 @@ h4 {
 
 h5, h6 {
   font-size: $font-size-tiny;
+}
+
+blockquote {
+  margin-left: $spacing-normal;
+  color: rgba($black, .75);
+  position: relative;
+  z-index: -1;
+  &:before {
+    position: absolute;
+    left: -1.5rem;
+    top: -.5rem;
+    display: block;
+    content: "“";
+    opacity: .25;
+    font-size: $font-size-huge;
+    font-family: Georgia, Times, serif;
+  }
+  cite {
+    display: block;
+    margin-top: $spacing-normal;
+    text-index: -#{$spacing-normal};
+    padding-left: $spacing-normal;
+    font-weight: bold;
+    font-size: $font-size-small;
+    &:before {
+      content: "— "
+    }
+  }
 }
 
 p {
@@ -115,6 +141,7 @@ img {
 .inner-container {
   width: 100%;
   max-width: 740px;
+  padding: 0 $spacing-normal;
   margin: 0 auto;
 }
 

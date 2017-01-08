@@ -4,9 +4,9 @@
 //
 
 // Colors
-$color-primary: #448AFF;
-$color-primary-light: #90CAF9;
-$color-primary-dark: #0D47A1;
+$color-primary: #425abc;
+$color-primary-light: #5571e0;
+$color-primary-dark: #283670;
 
 $color-background: #fefefe;
 $color-text: #333;
@@ -17,18 +17,20 @@ $black: #222;
 $white: #fafafa;
 
 // Font stacks
-$fonts-general: 'Judson', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$fonts-headers: 'Josefin Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$fonts-general: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$fonts-headers: 'Lora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 // Spacing and sizing
 $spacing-normal: 1.5rem;
+$spacing-tiny: $spacing-normal / 3;
 $spacing-small: $spacing-normal / 2;
 $spacing-large: $spacing-normal * 2;
 
 $font-size-tiny:  .75rem;
 $font-size-small: .85rem;
 $font-size-normal: 1rem;
-$font-size-large: 3rem;
+$font-size-large: 1.5rem;
+$font-size-larger: 2rem;
 $font-size-huge: 3.5rem;
 
 // Mobile breakpoint

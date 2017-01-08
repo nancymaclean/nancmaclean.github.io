@@ -4,19 +4,20 @@
   padding: $spacing-small;
   text-shadow: 1px 1px 0 $black,
                1px 1px 5px rgba($black, .75);
+  @include mobile {
+    flex-wrap: wrap;
+  }
 }
 
 .header__wrapper {
   width: 100%;
   background: $color-primary;
-  background: linear-gradient( 25deg, darken($color-primary, 10), $color-primary );
-  background-image: url(images/banner.jpg);
+  background: linear-gradient( 0deg, darken($color-primary, 20), $color-primary );
   background-size: cover;
   padding: $spacing-normal;
   color: $white;
   display: flex;
   align-items: flex-end;
-  height: 30vh;
   .default & {
     min-height: 60vh;
   }
@@ -26,22 +27,17 @@
   display: block;
   margin-right: $spacing-normal;
   @include height(2);
-  background: $color-primary;
-  border: $spacing-small solid $color-primary;
+  background: transparent;
   position: relative;
-  &:before {
-    display: block;
-    content: " ";
-    position: absolute;
-    left: -#{$spacing-small};
-    right: -#{$spacing-small};
-    top: -999px;
-    height: 999px;
-    background: $color-primary;
-    background: linear-gradient(0, $color-primary, $color-primary-dark);
-  }
+  overflow: hidden;
   &:hover .header__avatar {
     opacity: 1;
+  }
+  @include mobile {
+    width: 100%;
+    margin: 0 auto $spacing-normal;
+    @include height(0);
+    text-align: center;
   }
 }
 
@@ -56,6 +52,10 @@
   opacity: .75;
   transform: translateZ(0);
   transition: opacity .2s ease-in-out;
+  border-radius: 3px;
+  @include mobile {
+    margin: 0 auto;
+  }
 }
 
 .header__site-info {

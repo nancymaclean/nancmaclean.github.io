@@ -1,0 +1,19 @@
+{% include header.html %}
+  <h2 class="site-title">{{ page.title }}</h2>
+  <div class="publication-meta">
+    {% if page.type == 'book' %}
+      {{ page.publisher }}, {{ page.year }}
+    {% endif %}
+  </div>
+  {% if page.image %}
+    <div class="publication-img-box">
+      {% if page.orderLink %}<a href="{{ page.orderLink }}" class="publication-orderLink--img" title="Click here to order {{ page.title }}">{% endif %}
+        <img src="{{ site.baseurl }}images/publication-images/{{ page.image }}" class="publication-img" />
+      {% if page.orderLink %}
+      </a>
+      <a href="{{ page.orderLink }}" title="Click here to order {{ page.title }}" class="btn btn--full">Order Online</a>
+      {% endif %}
+    </div>
+  {% endif %}
+  {{ content }}
+{% include footer.html %}

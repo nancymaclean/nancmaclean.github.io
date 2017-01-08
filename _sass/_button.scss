@@ -1,0 +1,23 @@
+.btn {
+  display: inline-block;
+  background: $color-primary;
+  background: linear-gradient( 0deg, darken($color-primary, 20), $color-primary );
+  padding: $spacing-small;
+  color: $white;
+  font-size: $font-size-tiny;
+  border-radius: 3px;
+  text-align: center;
+  @include height(1);
+  transition: all .2 ease-in-out;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+    background: $color-primary-light;
+    @include height(2);
+  }
+}
+
+.btn--full {
+  width: 100%;
+  font-weight: bold;
+}

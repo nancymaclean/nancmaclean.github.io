@@ -14,3 +14,38 @@
 .publications__article__pages:before {
   content: ": ";
 }
+
+.publication-orderLink--img {
+  background: rgba($color-primary-light, .25);
+  padding: $spacing-tiny;
+  display: block;
+  line-height: 0;
+  transition: background .2s ease-in-out;
+  border-radius: 5px;
+  &:hover {
+    background: $color-primary-light;
+  }
+}
+
+.publication-meta {
+  margin-top: 0;
+  font-size: $font-size-tiny;
+  color: rgba($color-text, .5);
+}
+
+.publication-img-box {
+  float: right;
+  max-width: 200px;
+  margin-left: $spacing-normal;
+  margin-bottom: $spacing-small;
+  @include mobile {
+    max-width: 100%;
+    float: none;
+    margin-left: 0;
+  }
+}
+
+.publication-img {
+  width: 100%;
+  height: auto;
+}
