@@ -10,6 +10,10 @@ body {
   background: $color-background;
   font: 16px/1.4 $fonts-general;
   color: $color-text;
+  overflow-x: hidden;
+  @include mobile {
+    font: 12px/1.4 $fonts-general;
+  }
 }
 
 .container {

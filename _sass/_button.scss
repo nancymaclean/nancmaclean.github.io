@@ -12,8 +12,7 @@
   &:hover {
     text-decoration: none;
     color: $white;
-    background: $color-primary-light;
-    @include height(2);
+    background: lighten($color-primary, 10);
   }
 }
 

@@ -5,6 +5,7 @@ year: 2008
 publisher: Harvard University Press
 image: freedom-is-not-enough.png
 orderLink: https://www.amazon.com/Freedom-Not-Enough-Workplace-Foundation/dp/0674027493/
+description: In the 1950s, the exclusion of women and of black and Latino men from higher-paying jobs was so universal as to seem normal to most Americans. Today, diversity in the workforce is a point of pride. How did such a transformation come about?
 layout: publication
 published: true
 ---

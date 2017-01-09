@@ -16,26 +16,44 @@
 
   </head>
 
-  <body class="{{ page.layout | slugify }} {{ page.title | slugify }}">
+  <body class="{{ page.layout | slugify }} {{ page.title | slugify }} {% if page.url == '/' %}home{% endif %}">
     <div class="header__wrapper">
       <div class="inner-container">
         <header class="header">
-          <a href="{{ site.baseurl }}" class="header__avatar-link">
-            <div class="header__avatar__wrapper">
-              <img src="{{ site.avatar }}" class="header__avatar" />
-            </div>
-          </a>
+          <div class="header__banner">
+            <a href="{{ site.baseurl }}" class="header__avatar-link">
+              <div class="header__avatar__wrapper">
+                <img src="{{ site.avatar }}" class="header__avatar" />
+              </div>
+            </a>
 
-          <div class="header__site-info">
-            <h1 class="header__site-name"><a href="{{ site.baseurl }}" class="header__site-name__link">{{ site.name }}</a></h1>
-            <p class="header__site-description">
-              {{ site.description }}
-              {% if site.footer-links.email %}<span>|</span> <a href="mailto:{{ site.footer-links.email }}">{{ site.footer-links.email }}</a>{% endif %}
-            </p>
+            <div class="header__site-info">
+              <h1 class="header__site-name"><a href="{{ site.baseurl }}" class="header__site-name__link">{{ site.name }}</a></h1>
+              <p class="header__site-description">
+                {{ site.description }}
+                {% if site.footer-links.email %}<span>|</span> <a href="mailto:{{ site.footer-links.email }}">{{ site.footer-links.email }}</a>{% endif %}
+              </p>
+            </div>
           </div>
 
           {% if page.url == '/' %}
-            Something here for home header banner.
+            <div class="header__featured-book">
+              {% assign sorted = (site.publications | sort: 'year' | type: 'book') | reverse %}
+              {% for book in sorted limit:1 %}
+                <div class="header__featured-book__info">
+                  <h3 class="header__featured-book__title">
+                    <a href="{{ book.url }}" class="header__featured-book__title__link">{{ book.title }}</a>
+                  </h3>
+                  <div class="header__featured-book__description">
+                    {{ book.description }}
+                  </div>
+                  <a href="{{ book.url }}" class="header__featured-book__read-more btn">Read more &rarr;</a>
+                </div>
+                <a href="{{ book.url }}" class="header__featured-book__img__link" title="Read more about {{ book.title }}">
+                  <img src="{{ site.baseurl }}images/publication-images/{{ book.image }}" class="header__featured-book__img" />
+                </a>
+              {% endfor %}
+            </div>
           {% endif %}
 
         </header>
