@@ -1,6 +1,6 @@
 .nav {
     margin: 0 auto;
-    max-width: 740px;
+    max-width: 940px;
     width: 100%;
     text-align: right;
     padding: $spacing-normal;
@@ -9,26 +9,26 @@
 .nav__wrapper {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  border-top :$spacing-small solid $color-primary;
+  border-bottom: $spacing-tiny solid $color-primary;
+  background-color: rgba(black, 0.025);
 }
 
 .nav__link {
     display: block;
     padding: $spacing-small;
     margin: 0;
-    color: $color-primary;
+    color: $black;
     font-weight: bold;
     text-transform: uppercase;
     font-size: $font-size-tiny;
+    font-family: $fonts-headers;
     &:hover {
-        background: $color-primary;
-        color: $white;
+        color: $color-primary;
         text-decoration: none;
-        border-radius: 5px;
-        border-color: transparent;
     }
     + .nav__link {
-      border-left: 1px solid rgba($black, .05);
       padding-left: $spacing-small;
       marignl-left: $spacing-small;
     }

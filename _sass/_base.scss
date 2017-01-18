@@ -8,17 +8,17 @@ html {
 
 body {
   background: $color-background;
-  font: 16px/1.4 $fonts-general;
+  font: 16px/1.3 $fonts-general;
   color: $color-text;
   overflow-x: hidden;
   @include mobile {
-    font: 12px/1.4 $fonts-general;
+    font: 12px/1.2 $fonts-general;
   }
 }
 
 .container {
   margin: 0 auto;
-  max-width: 740px;
+  max-width: 940px;
   padding: 0 10px;
   width: 100%;
 }
@@ -144,7 +144,7 @@ img {
 
 .inner-container {
   width: 100%;
-  max-width: 740px;
+  max-width: 940px;
   padding: 0 $spacing-normal;
   margin: 0 auto;
 }

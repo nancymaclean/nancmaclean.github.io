@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}feed.xml" />
-    <link href="https://fonts.googleapis.com/css?family=Lora|Roboto:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:400,400i,700" rel="stylesheet">
 
   </head>
 
@@ -35,27 +35,6 @@
               </p>
             </div>
           </div>
-
-          {% if page.url == '/' %}
-            <div class="header__featured-book">
-              {% assign sorted = (site.publications | sort: 'year' | type: 'book') | reverse %}
-              {% for book in sorted limit:1 %}
-                <div class="header__featured-book__info">
-                  <h3 class="header__featured-book__title">
-                    <a href="{{ book.url }}" class="header__featured-book__title__link">{{ book.title }}</a>
-                  </h3>
-                  <div class="header__featured-book__description">
-                    {{ book.description }}
-                  </div>
-                  <a href="{{ book.url }}" class="header__featured-book__read-more btn">Read more &rarr;</a>
-                </div>
-                <a href="{{ book.url }}" class="header__featured-book__img__link" title="Read more about {{ book.title }}">
-                  <img src="{{ site.baseurl }}images/publication-images/{{ book.image }}" class="header__featured-book__img" />
-                </a>
-              {% endfor %}
-            </div>
-          {% endif %}
-
         </header>
       </div>
     </div>
@@ -67,6 +46,30 @@
         <!-- <a href="{{ site.baseurl }}/blog" class="nav__link">Blog</a> -->
         <a href="{{ site.baseurl }}documents/{{ site.current-cv }}" class="nav__link">Curriculum Vitae</a>
       </nav>
+    </div>
+
+    <div class="header__wrapper">
+      <div class="inner-container">
+        {% if page.url == '/' %}
+          <div class="header__featured-book">
+            {% assign sorted = (site.publications | sort: 'year' | type: 'book') | reverse %}
+            {% for book in sorted limit:1 %}
+              <div class="header__featured-book__info">
+                <h3 class="header__featured-book__title">
+                  <a href="{{ book.url }}" class="header__featured-book__title__link">{{ book.title }}</a>
+                </h3>
+                <div class="header__featured-book__description">
+                  {{ book.description }}
+                </div>
+                <a href="{{ book.url }}" class="header__featured-book__read-more btn">Read more &rarr;</a>
+              </div>
+              <a href="{{ book.url }}" class="header__featured-book__img__link" title="Read more about {{ book.title }}">
+                <img src="{{ site.baseurl }}images/publication-images/{{ book.image }}" class="header__featured-book__img" />
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
     </div>
 
     <div id="main" role="main" class="main">

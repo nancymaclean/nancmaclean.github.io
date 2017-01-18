@@ -2,8 +2,6 @@
   display: flex;
   align-items: center;
   padding: 0;
-  text-shadow: 1px 1px 0 $black,
-               1px 1px 5px rgba($black, .15);
   flex-wrap: wrap;
   .home & {
     padding-bottom: 0;
@@ -12,11 +10,8 @@
 
 .header__wrapper {
   width: 100%;
-  background: $color-primary;
-  background: linear-gradient( 0deg, darken($color-primary, 20), $color-primary );
   background-size: cover;
   padding: $spacing-normal 0;
-  color: $white;
   display: flex;
   align-items: flex-end;
   .home & {
@@ -73,13 +68,14 @@
 }
 
 .header__site-name__link {
-  color: $white;
+  color: $color-primary;
   font-size: $font-size-huge;
+  letter-spacing: -.15rem;
   @include mobile {
     font-size: $font-size-large;
   }
   &:hover {
-    color: $color-primary-light;
+    color: $color-primary-dark;
     text-decoration: none;
   }
 }
@@ -94,20 +90,22 @@
 }
 
 .header__site-description a {
-  color: $white;
+  color: $color-primary;
   &:hover {
-    color:$color-primary;
+    color:$color-primary-dark;
   }
 }
 
 .header__featured-book {
   width: 100%;
   display: flex;
-  background: $black;
-  margin: $spacing-small 0 0;
-  padding: $spacing-small 0;
+  background: $color-primary;
+  background: linear-gradient(0, $color-primary-dark, $color-primary);
+  color: $black;
+  margin: -#{$spacing-small + $spacing-large + $spacing-small} 0 0;
+  padding: $spacing-normal;
   position: relative;
-  &:before, &:after {
+  /*&:before, &:after {
     display: block;
     content: "";
     background: $black;
@@ -120,7 +118,11 @@
   &:after {
     left: 100%;
     right: -50vw;
-  }
+  }*/
+}
+
+.header__featured-book__info {
+  margin-right: $spacing-normal;
 }
 
 .header__featured-book__read-more {
@@ -138,6 +140,10 @@
   width: 450px;
   display: inline-block;
   margin-top: 0;
+  line-height: 0;
+  border-radius: 3px;
+  @include height(1);
+  overflow:hidden;
 }
 
 .header__featured-book__img {

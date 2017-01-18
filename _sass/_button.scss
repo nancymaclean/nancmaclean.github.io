@@ -1,7 +1,7 @@
 .btn {
   display: inline-block;
   background: $color-primary;
-  background: linear-gradient( 0deg, darken($color-primary, 20), $color-primary );
+  //background: linear-gradient( 0deg, darken($color-primary, 20), $color-primary );
   padding: $spacing-small;
   color: $white;
   font-size: $font-size-tiny;
