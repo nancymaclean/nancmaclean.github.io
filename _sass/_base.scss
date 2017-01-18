@@ -18,7 +18,7 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 940px;
+  max-width: $max-width;
   padding: 0 10px;
   width: 100%;
 }
@@ -45,23 +45,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: $font-size-larger;
+  font-size: $font-size-huge;
 }
 
 h2 {
-  font-size: $font-size-large;
+  font-size: $font-size-larger;
 }
 
 h3 {
-  font-size: $font-size-normal;
+  font-size: $font-size-large;
 }
 
 h4 {
-  font-size: $font-size-small;
+  font-size: $font-size-normal;
 }
 
 h5, h6 {
-  font-size: $font-size-tiny;
+  font-size: $font-size-small;
 }
 
 blockquote {
@@ -144,7 +144,7 @@ img {
 
 .inner-container {
   width: 100%;
-  max-width: 940px;
+  max-width: $max-width;
   padding: 0 $spacing-normal;
   margin: 0 auto;
 }

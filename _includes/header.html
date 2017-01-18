@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html amp lang="en">
   <head>
     <title>
       {% if page.title %}
@@ -8,12 +8,16 @@
       {{ site.name }} – {{ site.description }}
     </title>
 
+    <!-- Accelerate this page -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link rel="canonical" href="{{ site.basedomain }}{{ page.url }}" />
+
     {% include meta.html %}
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}feed.xml" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:400,400i,700" rel="stylesheet">
-
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
 
   <body class="{{ page.layout | slugify }} {{ page.title | slugify }} {% if page.url == '/' %}home{% endif %}">
@@ -42,35 +46,35 @@
     <div class="nav">
       <nav class="nav__wrapper">
         <a href="{{ site.baseurl }}" class="nav__link">Home</a>
-        <a href="{{ site.baseurl }}about" class="nav__link">About</a>
+        <a href="{{ site.baseurl }}publications" class="nav__link">Publications</a>
         <!-- <a href="{{ site.baseurl }}/blog" class="nav__link">Blog</a> -->
         <a href="{{ site.baseurl }}documents/{{ site.current-cv }}" class="nav__link">Curriculum Vitae</a>
       </nav>
     </div>
 
-    <div class="header__wrapper">
-      <div class="inner-container">
         {% if page.url == '/' %}
-          <div class="header__featured-book">
-            {% assign sorted = (site.publications | sort: 'year' | type: 'book') | reverse %}
-            {% for book in sorted limit:1 %}
-              <div class="header__featured-book__info">
-                <h3 class="header__featured-book__title">
-                  <a href="{{ book.url }}" class="header__featured-book__title__link">{{ book.title }}</a>
-                </h3>
-                <div class="header__featured-book__description">
-                  {{ book.description }}
-                </div>
-                <a href="{{ book.url }}" class="header__featured-book__read-more btn">Read more &rarr;</a>
+          <div class="header__wrapper">
+            <div class="inner-container">
+              <div class="header__featured-book">
+                {% assign sorted = (site.publications | sort: 'year' | type: 'book') | reverse %}
+                {% for book in sorted limit:1 %}
+                  <div class="header__featured-book__info">
+                    <h3 class="header__featured-book__title">
+                      <a href="{{ book.url }}" class="header__featured-book__title__link">{{ book.title }}</a>
+                    </h3>
+                    <div class="header__featured-book__description">
+                      {{ book.description }}
+                    </div>
+                    <a href="{{ book.url }}" class="header__featured-book__read-more btn btn--ghost">Read more &rarr;</a>
+                  </div>
+                  <a href="{{ book.url }}" class="header__featured-book__img__link" title="Read more about {{ book.title }}">
+                    <img src="{{ site.baseurl }}images/publication-images/{{ book.image }}" class="header__featured-book__img" />
+                  </a>
+                {% endfor %}
               </div>
-              <a href="{{ book.url }}" class="header__featured-book__img__link" title="Read more about {{ book.title }}">
-                <img src="{{ site.baseurl }}images/publication-images/{{ book.image }}" class="header__featured-book__img" />
-              </a>
-            {% endfor %}
+            </div>
           </div>
         {% endif %}
-      </div>
-    </div>
 
     <div id="main" role="main" class="main">
       <div class="inner-container">

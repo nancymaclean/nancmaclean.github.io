@@ -51,6 +51,7 @@ url: https://nancymaclean.github.io
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: "/"
+basedomain: "https://nancymaclean.github.io"
 
 # Custom collections for academics
 collections:

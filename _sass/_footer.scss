@@ -4,5 +4,5 @@
 
 .footer {
   padding: $spacing-normal;
-  background: rgba($black, .1);
+  border-top: $spacing-small solid $color-primary;
 }

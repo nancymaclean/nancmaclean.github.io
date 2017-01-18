@@ -26,12 +26,14 @@ $spacing-tiny: $spacing-normal / 3;
 $spacing-small: $spacing-normal / 2;
 $spacing-large: $spacing-normal * 2;
 
-$font-size-tiny:  .75rem;
-$font-size-small: .85rem;
+$font-size-tiny:  0.64em;
+$font-size-small: 0.8em;
 $font-size-normal: 1rem;
-$font-size-large: 1.5rem;
-$font-size-larger: 2rem;
-$font-size-huge: 3.5rem;
+$font-size-large: 1.25em;
+$font-size-larger: 1.563em;
+$font-size-huge: 1.953em;
+
+$max-width: 940px;
 
 // Mobile breakpoint
 @mixin mobile {

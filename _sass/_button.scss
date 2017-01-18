@@ -20,3 +20,19 @@
   width: 100%;
   font-weight: bold;
 }
+
+.btn--ghost {
+  @include height(0);
+  background: transparent;
+  border: 1px solid $white;
+  &:hover {
+    background: rgba($white, .25);
+  }
+}
+
+.btn--dark {
+  background: darken($color-primary-dark, 20);
+  &:hover {
+    background: darken($color-primary-dark, 50);
+  }
+}
